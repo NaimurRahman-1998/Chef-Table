@@ -2,8 +2,9 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
+import { FaGoogle,FaGithub } from "react-icons/fa";
 const Login = () => {
-    const {Login} = useContext(AuthContext)
+    const {Login,googleUser} = useContext(AuthContext)
     const [success,setSuccess] = useState('')
     const [error,setError] = useState()
 
@@ -34,7 +35,15 @@ const Login = () => {
         })
     }
     const handleLoginGoogle =()=>{
-        console.log('asd')
+        googleUser()
+        .then(result=>{
+            console.log(result)
+            setSuccess('Google Login Success')
+
+        })
+        .catch(error=>{
+            setError(error.message)
+        })
     }
 
     return (
@@ -61,11 +70,14 @@ const Login = () => {
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
+                                
                                 {success && <p className='text-green-500'>{success}</p> }
                                 {error && <p className='text-red-500'>{error}</p> }
                             </div>
+                            <button onClick={handleLoginGoogle} className=' w-[10rem] h-[2rem] rounded justify-center flex items-center text-sm bg-blue-600 text-white '> <FaGoogle className='mr-2'></FaGoogle> SignIn With Google</button>
+                            <button className=' w-[10rem] h-[2rem] rounded justify-center flex items-center text-sm bg-stone-800 text-white '> <FaGoogle className='mr-2'></FaGoogle> SignIn With GitHub</button>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-error hover:btn-ghost">Login</button>
                             </div>
                         </form>
                         <Link to='/register' className=" mx-6 mb-4 label-text-alt link link-hover text-blue-600">New User? Please Register</Link>
