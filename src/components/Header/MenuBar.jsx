@@ -15,7 +15,7 @@ const MenuBar = () => {
             <div className='my-container'>
                 <div className="navbar bg-base-100">
                     <div className="navbar-start font-semibold flex gap-3">
-                        <Link >Home</Link>
+                        <Link to='/'>Home</Link>
                         <Link to='/login'>Login</Link>
                         <Link to='/register'>Register</Link>
                         <Link >Blogs</Link>
@@ -25,7 +25,7 @@ const MenuBar = () => {
                             user && <p className='mr-3'>Signed in As : <span>{user?.email}</span></p>
                         }
                         {
-                            user ? <Link onClick={handleLogout}><button className='btn'>Logout</button></Link> : <Link to='/login' ><button className='btn'>Login</button></Link>
+                            user ? <button onClick={handleLogout} className='btn'>Logout</button> : <Link to='/login' ><button className='btn'>Login</button></Link>
                         }
                     </div>
                 </div>
