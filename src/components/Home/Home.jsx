@@ -29,7 +29,7 @@ const Home = () => {
                     <SwiperSlide> <img src="https://www.foodandwine.com/thmb/jJupeS5vHMkh9TBsJkwdaG1uPY8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Tamarind-Chicken-FT-RECIPE0522-80072d93f7bc4bc7abf1dcf5b5317b0c.jpg" alt="" /> </SwiperSlide>
                     <SwiperSlide> <img src="https://static.onecms.io/wp-content/uploads/sites/43/2022/04/06/233613-Best-Damn-Chili-mfs-242.jpg" alt="" /> </SwiperSlide>
                     <SwiperSlide> <img src="https://www.forksoverknives.com/wp-content/uploads/spaghetti-meatballs-wordpress-1.jpg" alt="" /> </SwiperSlide>
-
+                    
                 </Swiper>
             </div>
 
