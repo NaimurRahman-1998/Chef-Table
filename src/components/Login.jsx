@@ -4,12 +4,13 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 const Login = () => {
-    const { Login, googleUser } = useContext(AuthContext)
+    const { Login, googleUser,setUser } = useContext(AuthContext)
     const [success, setSuccess] = useState('')
     const [error, setError] = useState()
 
     const location = useLocation()
-    const from = location.state?.from?.pathname || '/'
+    const from = location.state?.from?.pathname || "/";
+
 
     const navigate = useNavigate()
     const handleLogin = (event) => {
@@ -37,8 +38,10 @@ const Login = () => {
     const handleLoginGoogle = () => {
         googleUser()
             .then(result => {
-                console.log(result)
-                navigate('/')
+                const loggedGoogle = result.user
+                setUser(loggedGoogle)
+                navigate(from, { replace: true })
+                .console.log(loggedGoogle)
             })
             .catch(error => {
                 console.log(error)

@@ -72,7 +72,7 @@ const ExtraSection = ({ data }) => {
                 <div className='w-[30%]'>
                     <h1 className=' font-medium text-3xl border-b-4 p-4 mx-4'>Featured Article</h1>
                     <div className='mt-8 relative '>
-                        <img className='' src="https://radiustheme.com/demo/wordpress/themes/ranna/wp-content/uploads/2020/06/ranna-wordpress-theme-radiustheme.com-6-530x338.jpg" alt="" />
+                        <img className='relative' src="https://radiustheme.com/demo/wordpress/themes/ranna/wp-content/uploads/2020/06/ranna-wordpress-theme-radiustheme.com-6-530x338.jpg" alt="" />
                         <div className='p-8 w-[20rem] flex flex-col gap-5 items-center absolute  top-48 left-12 bg-white '>
                             <p className='text-lg font-bold text-red-400'>pasta</p>
                             <h1 className='font-semibold text-2xl'>Spiced Shells</h1>

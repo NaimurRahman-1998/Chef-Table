@@ -9,10 +9,13 @@ import "swiper/css/navigation";
 
 import './Home.css'
 
-import { BsFillHeartFill, BsClock, BsFillArrowRightCircleFill } from "react-icons/bs";
+import { BsFillHeartFill, BsClock, BsFillArrowRightCircleFill, BsHeart } from "react-icons/bs";
 
 import { Pagination, Navigation } from "swiper";
 import ExtraSection from '../ExtraSection/ExtraSection';
+
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 const Home = () => {
     const data = useLoaderData()
     // console.log(data)
@@ -27,9 +30,66 @@ const Home = () => {
                     modules={[Pagination, Navigation]}
                     className="mySwiper"
                 >
-                    <SwiperSlide> <img src="https://www.foodandwine.com/thmb/jJupeS5vHMkh9TBsJkwdaG1uPY8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Tamarind-Chicken-FT-RECIPE0522-80072d93f7bc4bc7abf1dcf5b5317b0c.jpg" alt="" /> </SwiperSlide>
-                    <SwiperSlide> <img src="https://static.onecms.io/wp-content/uploads/sites/43/2022/04/06/233613-Best-Damn-Chili-mfs-242.jpg" alt="" /> </SwiperSlide>
-                    <SwiperSlide> <img src="https://www.forksoverknives.com/wp-content/uploads/spaghetti-meatballs-wordpress-1.jpg" alt="" /> </SwiperSlide>
+                    <SwiperSlide >
+                        <div className='relative'>
+                            <img src="https://www.foodandwine.com/thmb/jJupeS5vHMkh9TBsJkwdaG1uPY8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Tamarind-Chicken-FT-RECIPE0522-80072d93f7bc4bc7abf1dcf5b5317b0c.jpg" alt="" />
+                            <div className=' p-5 w-[40rem] flex flex-col gap-2 items-center absolute bottom-16 left-[22rem] hover:-translate-y-28 transition duration-700 bg-white '>
+                                <h1>Chefs Table</h1>
+                                <p className='text-lg font-bold text-red-400'>Lunch</p>
+                                <h1 className='font-semibold text-2xl'>Special Barbeque Chicken with Dressing</h1>
+                                <Rating
+                                    style={{ maxWidth: 180 }}
+                                    value={3}
+                                    readOnly
+                                />
+                                <p className='text-center text-gray-500 text-lg'>The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is</p>
+                                <div className="flex gap-4 font-semibold">
+                                    <p className='text-red-500 flex items-center gap-2'><BsClock /> 55mins</p>
+                                    <p className='text-red-500 flex items-center gap-2'><BsHeart /> 5 Like</p>
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img src="https://static.onecms.io/wp-content/uploads/sites/43/2022/04/06/233613-Best-Damn-Chili-mfs-242.jpg" alt="" />
+                            <div className=' p-5 w-[40rem] flex flex-col gap-2 items-center absolute -bottom-28 left-[22rem] hover:-translate-y-28 transition duration-700 bg-white '>
+                                <h1>Chefs Table</h1>
+                                <p className='text-lg font-bold text-red-400'>Lunch</p>
+                                <h1 className='font-semibold text-2xl'>Special Barbeque Chicken with Dressing</h1>
+                                <Rating
+                                    style={{ maxWidth: 180 }}
+                                    value={3}
+                                    readOnly
+                                />
+                                <p className='text-center text-gray-500 text-lg'>The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is</p>
+                                <div className="flex gap-4 font-semibold">
+                                    <p className='text-red-500 flex items-center gap-2'><BsClock /> 55mins</p>
+                                    <p className='text-red-500 flex items-center gap-2'><BsHeart /> 5 Like</p>
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img src="https://www.forksoverknives.com/wp-content/uploads/spaghetti-meatballs-wordpress-1.jpg" alt="" />
+                            <div className=' p-5 w-[40rem] flex flex-col gap-2 items-center absolute -bottom-28 left-[22rem] hover:-translate-y-28 transition duration-700 bg-white '>
+                                <h1>Chefs Table</h1>
+                                <p className='text-lg font-bold text-red-400'>Lunch</p>
+                                <h1 className='font-semibold text-2xl'>Special Barbeque Chicken with Dressing</h1>
+                                <Rating
+                                    style={{ maxWidth: 180 }}
+                                    value={3}
+                                    readOnly
+                                />
+                                <p className='text-center text-gray-500 text-lg'>The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is</p>
+                                <div className="flex gap-4 font-semibold">
+                                    <p className='text-red-500 flex items-center gap-2'><BsClock /> 55mins</p>
+                                    <p className='text-red-500 flex items-center gap-2'><BsHeart /> 5 Like</p>
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
 
                 </Swiper>
             </div>
@@ -62,7 +122,7 @@ const Home = () => {
 
                                     <div className='flex items-center mt-2 bg-red-600 rounded-full hover:bg-red-400 p-2'>
                                         <Link to={`/chefsInfo/${chef.id}`}><button className='mr-2  text-white'>View Recipes</button></Link>
-                                        <BsFillArrowRightCircleFill className='text-xl text-white'/>
+                                        <BsFillArrowRightCircleFill className='text-xl text-white' />
                                     </div>
                                 </div>
                             </div>
