@@ -33,7 +33,9 @@ const Footer = () => {
                     <FaYoutube className=" text-gray-400 text-2xl"></FaYoutube>
                     2.5M Subscribers
                 </div>
+                
             </div>
+            <h1 className="text-gray-400 text-center mt-10">© 2020 ChefsTable. All Rights Reserved.</h1>
         </div>
     );
 };

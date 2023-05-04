@@ -25,7 +25,7 @@ const MenuBar = () => {
                             user && <p className='mr-3'>Signed in As : <span>{user?.email}</span></p>
                         }
                         {
-                            user ? <button onClick={handleLogout} className='btn'>Logout</button> : <Link to='/login' ><button className='font-semibold text-lg hover:text-red-500'>Login</button></Link>
+                            user ? <button onClick={handleLogout} className='font-semibold text-lg hover:text-red-500'>Logout</button> : <Link to='/login' ><button className='font-semibold text-lg hover:text-red-500'>Login</button></Link>
                         }
                         <button className='btn ml-3 bg-red-600 border-red-600 px-6 rounded-full'> <FaPlus className=' mr-2' /> Submit Recipe</button>
                     </div>
