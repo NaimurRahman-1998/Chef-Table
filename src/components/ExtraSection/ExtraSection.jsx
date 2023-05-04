@@ -5,13 +5,13 @@ import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { BsClock, BsEyeFill, BsHeart } from "react-icons/bs";
 const ExtraSection = ({ data }) => {
-    console.log(data[0].recipes[0].description.slice(0, 70))
+    // console.log(data[0].recipes[0].description.slice(0, 70))
     return (
         <div className='mt-10'>
-            <div className='flex'>
-                <div className='w-[70%]'>
+            <div className='lg:flex'>
+                <div className='lg:w-[70%] mx-auto'>
                     <h1 className=' font-medium text-3xl border-b-4 p-4 mr-4'>Popular Recipes</h1>
-                    <div className='mt-8 flex gap-8'>
+                    <div className='lg:mt-8 mx-auto lg:flex gap-8'>
                         <img className='w-[20rem] h-[15rem] rounded-lg' src={data[0].recipes[0].image} alt="" />
                         <div className=' w-full'>
                             <p className='text-lg font-bold text-red-400 mb-3'>Lunch</p>
@@ -30,7 +30,7 @@ const ExtraSection = ({ data }) => {
                             </div>
                         </div>
                     </div>
-                    <div className='mt-8 flex gap-8'>
+                    <div className='lg:mt-8 mx-auto lg:flex gap-8'>
                         <img className='w-[20rem] h-[15rem] rounded-lg' src={data[0].recipes[1].image} alt="" />
                         <div className=' w-full'>
                             <p className='text-lg font-bold text-red-400 mb-3'>Meal</p>
@@ -49,7 +49,7 @@ const ExtraSection = ({ data }) => {
                             </div>
                         </div>
                     </div>
-                    <div className='mt-8 flex gap-8'>
+                    <div className='lg:mt-8 mx-auto lg:flex gap-8'>
                         <img className='w-[20rem] h-[15rem] rounded-lg' src={data[0].recipes[2].image} alt="" />
                         <div className=' w-full'>
                             <p className='text-lg font-bold text-red-400 mb-3'>Dinner</p>
@@ -73,7 +73,7 @@ const ExtraSection = ({ data }) => {
                     <h1 className=' font-medium text-3xl border-b-4 p-4 mx-4'>Featured Article</h1>
                     <div className='mt-8 relative '>
                         <img className='relative' src="https://radiustheme.com/demo/wordpress/themes/ranna/wp-content/uploads/2020/06/ranna-wordpress-theme-radiustheme.com-6-530x338.jpg" alt="" />
-                        <div className='p-8 w-[20rem] flex flex-col gap-5 items-center absolute  top-48 left-12 bg-white '>
+                        <div className=' hidden p-8 w-[20rem] lg:flex flex-col gap-5 items-center absolute  top-48 left-12 bg-white '>
                             <p className='text-lg font-bold text-red-400'>pasta</p>
                             <h1 className='font-semibold text-2xl'>Spiced Shells</h1>
                             <p className='text-center text-gray-500 text-lg'>The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is</p>

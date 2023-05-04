@@ -15,7 +15,7 @@ const Footer = () => {
                     <p className=" text-sm">Discover Your Recipes</p>
                 </div>
             </div>
-            <div className="my-container text-gray-400 flex justify-center items-center gap-20 mt-6">
+            <div className="my-container text-gray-400 lg:flex justify-center items-center gap-20 mt-6">
                 
                 <div className="flex   gap-3">
                     <a href="https://www.facebook.com/"><FaFacebook className=" text-gray-400 text-2xl"></FaFacebook></a>

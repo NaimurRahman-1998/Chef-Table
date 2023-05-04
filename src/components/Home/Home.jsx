@@ -37,7 +37,7 @@ const Home = () => {
                         <div className='relative'>
 
                             <img src="https://www.foodandwine.com/thmb/jJupeS5vHMkh9TBsJkwdaG1uPY8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Tamarind-Chicken-FT-RECIPE0522-80072d93f7bc4bc7abf1dcf5b5317b0c.jpg" alt="" />
-                            <div className=' p-5 w-[40rem] flex flex-col gap-2 items-center absolute bottom-16 left-[22rem] hover:-translate-y-28 transition duration-700 bg-white '>
+                            <div className='lg:flex hidden p-5 w-[40rem] flex-col gap-2 items-center absolute bottom-16 left-[22rem] hover:-translate-y-28 transition duration-700 bg-white '>
                                 <h1>Chefs Table</h1>
                                 <p className='text-lg font-bold text-red-400'>Lunch</p>
                                 <h1 className='font-semibold text-2xl'>Special Barbeque Chicken with Dressing</h1>
@@ -57,7 +57,7 @@ const Home = () => {
                     <SwiperSlide>
                         <div>
                             <img src="https://static.onecms.io/wp-content/uploads/sites/43/2022/04/06/233613-Best-Damn-Chili-mfs-242.jpg" alt="" />
-                            <div className=' p-5 w-[40rem] flex flex-col gap-2 items-center absolute -bottom-28 left-[22rem] hover:-translate-y-28 transition duration-700 bg-white '>
+                            <div className='lg:flex hidden p-5 w-[40rem] flex-col gap-2 items-center absolute -bottom-28 left-[22rem] hover:-translate-y-28 transition duration-700 bg-white '>
                                 <h1>Chefs Table</h1>
                                 <p className='text-lg font-bold text-red-400'>Lunch</p>
                                 <h1 className='font-semibold text-2xl'>Special Barbeque Chicken with Dressing</h1>
@@ -77,7 +77,7 @@ const Home = () => {
                     <SwiperSlide>
                         <div>
                             <img src="https://www.forksoverknives.com/wp-content/uploads/spaghetti-meatballs-wordpress-1.jpg" alt="" />
-                            <div className=' p-5 w-[40rem] flex flex-col gap-2 items-center absolute -bottom-28 left-[22rem] hover:-translate-y-28 transition duration-700 bg-white '>
+                            <div className='lg:flex hidden p-5 w-[40rem]  flex-col gap-2 items-center absolute -bottom-28 left-[22rem] hover:-translate-y-28 transition duration-700 bg-white '>
                                 <h1>Chefs Table</h1>
                                 <p className='text-lg font-bold text-red-400'>Lunch</p>
                                 <h1 className='font-semibold text-2xl'>Special Barbeque Chicken with Dressing</h1>
@@ -100,7 +100,7 @@ const Home = () => {
 
             <h1 className=' text-5xl text-center font-bold mt-8 my-font ' >Our Chefs</h1>
 
-            <div id='cards' className='mt-5  grid grid-cols-3 gap-12'>
+            <div id='cards' className='mt-5  grid lg:grid-cols-3 gap-12'>
                 {
                     data.map((chef) =>
                         <div key={chef.id} className='border-2 rounded p-5'>

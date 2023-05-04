@@ -14,7 +14,7 @@ const Register = () => {
     // console.log(user)
 
 
-
+    
 
     const handleRegister = event => {
         event.preventDefault()
@@ -25,6 +25,10 @@ const Register = () => {
         const photoURL = form.photo.value
 
         // console.log(name,email,password,photoURL)
+        if(password<6 ){
+            setError('Password must be equal or above 6 Char')
+            return
+        }
 
         createUser(email, password)
             .then(result => {
@@ -57,19 +61,19 @@ const Register = () => {
                     <h1 className="text-5xl font-bold">Register now!</h1>
 
                 </div>
-                <div className="card flex-shrink-0 w-[35rem]  shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0  w-[20rem] lg:w-[35rem]  shadow-2xl bg-base-100">
                     <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" placeholder="Name" name='name' id='name' className="input input-bordered" />
+                            <input required type="text" placeholder="Name" name='name' id='name' className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="email" name='email' id='email' className="input input-bordered" />
+                            <input required type="email" placeholder="email" name='email' id='email' className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -81,14 +85,14 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name='password' id='password' placeholder="password" className="input input-bordered" />
+                            <input required type="password" name='password' id='password' placeholder="password" className="input input-bordered" />
                             <label className="label">
                                 <Link to='/login' className="label-text-alt link link-hover text-blue-600">ALready User? Please Login</Link>
                             </label>
                             {success && <p className='text-green-500'>{success}</p>}
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Register</button>
+                            <button className="btn bg-red-500">Register</button>
                         </div>
                     </form>
                 </div>
