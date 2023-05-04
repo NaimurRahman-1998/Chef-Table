@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 const Login = () => {
-    const { Login, googleUser,setUser } = useContext(AuthContext)
+    const { Login, googleUser,setUser ,user} = useContext(AuthContext)
     const [success, setSuccess] = useState('')
     const [error, setError] = useState()
 
@@ -40,13 +40,18 @@ const Login = () => {
             .then(result => {
                 const loggedGoogle = result.user
                 setUser(loggedGoogle)
-                navigate(from, { replace: true })
+                
                 .console.log(loggedGoogle)
             })
             .catch(error => {
                 console.log(error)
             })
     }
+    useEffect(()=>{
+        if(user){
+            navigate(from, { replace: true })
+        }
+        },[user])
 
     return (
         <div>

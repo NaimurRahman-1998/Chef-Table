@@ -3,6 +3,9 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import ReactDOM from 'react-dom';
+import LazyLoad from 'react-lazyload';
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -32,6 +35,7 @@ const Home = () => {
                 >
                     <SwiperSlide >
                         <div className='relative'>
+
                             <img src="https://www.foodandwine.com/thmb/jJupeS5vHMkh9TBsJkwdaG1uPY8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Tamarind-Chicken-FT-RECIPE0522-80072d93f7bc4bc7abf1dcf5b5317b0c.jpg" alt="" />
                             <div className=' p-5 w-[40rem] flex flex-col gap-2 items-center absolute bottom-16 left-[22rem] hover:-translate-y-28 transition duration-700 bg-white '>
                                 <h1>Chefs Table</h1>
@@ -100,7 +104,9 @@ const Home = () => {
                 {
                     data.map((chef) =>
                         <div key={chef.id} className='border-2 rounded p-5'>
-                            <img className='h-[15rem] w-[15rem] rounded-full  mx-auto' src={chef.image} alt="" />
+                            <LazyLoad height={200}>
+                                <img className='h-[15rem] w-[15rem] rounded-full  mx-auto' src={chef.image} alt="" />
+                            </LazyLoad>
                             <h1 className='text-center text-3xl font-semibold mt-3 my-font '>{chef.name}</h1>
                             <p className='text-center font-bio text-gray-500 font-'>{chef.bio}</p>
                             <div className='flex mt-5 justify-between'>

@@ -1,6 +1,7 @@
 import {
     createBrowserRouter,
 } from "react-router-dom";
+import Blog from "../components/Blog";
 import ChefsInfo from "../components/ChefsInfo/ChefsInfo";
 import Home from "../components/Home/Home";
 import Login from "../components/Login";
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
                 loader: ({params})=> fetch (`https://myapp-naimurrahman-1998.vercel.app/chefsInfo/${params.id}`)
             }
         ]
+    },
+    {
+        path: '/blogs',
+        element: <Blog></Blog>
     }
     
 ]);
