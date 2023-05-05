@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import Footer from "./Footer/Footer";
-import Header from "./Header/Header";
-import MenuBar from "./Header/MenuBar";
+import Footer from "../../Footer/Footer";
+import Header from "../../Header/Header";
+import MenuBar from "../../Header/MenuBar";
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf'
 const Blog = () => {
@@ -12,12 +12,12 @@ const Blog = () => {
 
 
     const downloadPDF = () => {
-        const doc = new jsPDF('p', 'pt','a4');
-        doc.text(20,20,'Information About BLOG Page')
-        doc.text(20,40,'1. there is a Title in the middle')
-        doc.text(20,60,'2. there are 4 cards each containing 4 questions with answers')
-        doc.text(20,80,'3. Each Card is having different COLORS')
-        doc.text(20,100,'4. There is a button to download pdf on top left corner')
+        const doc = new jsPDF('p', 'pt', 'a4');
+        doc.text(20, 20, 'Information About BLOG Page')
+        doc.text(20, 40, '1. there is a Title in the middle')
+        doc.text(20, 60, '2. there are 4 cards each containing 4 questions with answers')
+        doc.text(20, 80, '3. Each Card is having different COLORS')
+        doc.text(20, 100, '4. There is a button to download pdf on top left corner')
         setLoader(false)
         doc.save('download.pdf')
     }

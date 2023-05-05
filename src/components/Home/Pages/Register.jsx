@@ -1,20 +1,20 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../provider/AuthProvider';
+import { AuthContext } from '../../../provider/AuthProvider';
 import { getAuth, updateProfile } from "firebase/auth";
-import app from '../firebase/firebase.config';
+import app from '../../../firebase/firebase.config';
 const auth = getAuth(app);
 
 const Register = () => {
-    const { user, createUser, profile, setUser,logout } = useContext(AuthContext)
+    const { user, createUser, profile, setUser, logout } = useContext(AuthContext)
     const [success, setSuccess] = useState('')
     const [error, setError] = useState('')
     const navigate = useNavigate()
     // console.log(user)
 
 
-    
+
 
     const handleRegister = event => {
         event.preventDefault()
@@ -25,7 +25,7 @@ const Register = () => {
         const photoURL = form.photo.value
 
         // console.log(name,email,password,photoURL)
-        if(password<6 ){
+        if (password < 6) {
             setError('Password must be equal or above 6 Char')
             return
         }
@@ -50,7 +50,7 @@ const Register = () => {
                 console.log(error)
                 setError(error.message)
             })
-            error || navigate('/login')
+        error || navigate('/login')
 
 
     }

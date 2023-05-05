@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../provider/AuthProvider';
+import { AuthContext } from '../../../provider/AuthProvider';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 const Login = () => {
     const { Login, googleUser, setUser, user, githubUser } = useContext(AuthContext)
@@ -9,7 +9,7 @@ const Login = () => {
     const [error, setError] = useState()
 
     const location = useLocation()
-    const from = location.state?.from?.pathname || "/";
+    const from = location.state?.from?.pathname || '/';
 
 
     const navigate = useNavigate()
@@ -40,7 +40,7 @@ const Login = () => {
             .then(result => {
                 const loggedGoogle = result.user
                 setUser(loggedGoogle)
-
+                navigate(from, { replace: true })
                     .console.log(loggedGoogle)
             })
             .catch(error => {
@@ -61,11 +61,11 @@ const Login = () => {
 
     // when user is found in login page it will redirect to home page
 
-    useEffect(() => {
-        if (user) {
-            navigate(from, { replace: true })
-        }
-    }, [user])
+    // useEffect(() => {
+    //     if (user) {
+    //         navigate(from, { replace: true })
+    //     }
+    // }, [user])
 
     return (
         <div>

@@ -15,7 +15,7 @@ import './Home.css'
 import { BsFillHeartFill, BsClock, BsFillArrowRightCircleFill, BsHeart } from "react-icons/bs";
 
 import { Pagination, Navigation } from "swiper";
-import ExtraSection from '../ExtraSection/ExtraSection';
+import ExtraSection from '../../ExtraSection/ExtraSection';
 
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'

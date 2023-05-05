@@ -1,12 +1,12 @@
 import {
     createBrowserRouter,
 } from "react-router-dom";
-import Blog from "../components/Blog";
+import Blog from "../components/Home/Pages/Blog";
 import ChefsInfo from "../components/ChefsInfo/ChefsInfo";
-import Error from "../components/Error";
-import Home from "../components/Home/Home";
-import Login from "../components/Login";
-import Register from "../components/Register";
+import Error from "../components/Home/Pages/Error";
+import Home from "../components/Home/Home/Home";
+import Login from "../components/Home/Pages/Login";
+import Register from "../components/Home/Pages/Register";
 import ChefLayout from "../layout/ChefLayout/ChefLayout";
 import LoginLayout from "../layout/LoginLayout/LoginLayout";
 import PrivateRoute from "./PrivateRoute";
@@ -20,27 +20,27 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: ()=> fetch('https://myapp-naimurrahman-1998.vercel.app/chefsInfo')
+                loader: () => fetch('https://myapp-naimurrahman-1998.vercel.app/chefsInfo')
             },
             {
-                path:'/login',
-                element : <Login></Login>
+                path: '/login',
+                element: <Login></Login>
             },
             {
                 path: '/register',
                 element: <Register></Register>
             }
-            
+
         ]
     },
     {
         path: 'chefsInfo',
         element: <ChefLayout></ChefLayout>,
-        children : [
+        children: [
             {
-                path : '/chefsInfo/:id',
+                path: '/chefsInfo/:id',
                 element: <PrivateRoute><ChefsInfo></ChefsInfo></PrivateRoute>,
-                loader: ({params})=> fetch (`https://myapp-naimurrahman-1998.vercel.app/chefsInfo/${params.id}`)
+                loader: ({ params }) => fetch(`https://myapp-naimurrahman-1998.vercel.app/chefsInfo/${params.id}`)
             }
         ]
     },
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         path: '/blogs',
         element: <Blog></Blog>
     }
-    
+
 ]);
 
 
