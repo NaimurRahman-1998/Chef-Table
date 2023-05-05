@@ -59,6 +59,8 @@ const Login = () => {
             })
     }
 
+    // when user is found in login page it will redirect to home page
+
     useEffect(() => {
         if (user) {
             navigate(from, { replace: true })
