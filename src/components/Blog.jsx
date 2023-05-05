@@ -13,20 +13,12 @@ const Blog = () => {
 
     const downloadPDF = () => {
         const doc = new jsPDF('p', 'pt','a4');
-        doc.text(20,20,'this is about my project')
-        doc.text(20,40,'it is a chefs Recipe Website.')
-        doc.text(20,60,'On top there is a logo and just after that ')
-        doc.text(20,80,'there is a Menu bar which is mobile responsive')
-        doc.text(20,100,'banner is a carousel.there is a div element in middle  ')
-        doc.text(20,120,'bottom,it has a HOVER effect ')
-        doc.text(20,140,'below there are six cards containing ')
-        doc.text(20,160,'6 chefs and there information')
-        doc.text(20,180,'there is a button called VIEW RECIPE  ')
-        doc.text(20,200,'which will redirect to chefs recipes')
-        doc.text(20,220,'there is a favorite icon which will add toast')
-        doc.text(20,240,'there is 2 extra section named popular section and ')
-        doc.text(20,260,'featured section above the footer')
-        doc.text(20,280,'the login page has 3 options for user ti sign in.')
+        doc.text(20,20,'Information About BLOG Page')
+        doc.text(20,40,'1. there is a Title in the middle')
+        doc.text(20,60,'2. there are 4 cards each containing 4 questions with answers')
+        doc.text(20,80,'3. Each Card is having different COLORS')
+        doc.text(20,100,'4. There is a button to download pdf on top left corner')
+        setLoader(false)
         doc.save('download.pdf')
     }
 
